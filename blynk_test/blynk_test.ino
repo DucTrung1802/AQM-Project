@@ -17,13 +17,13 @@
 // See the Device Info tab, or Template settings
 #define BLYNK_TEMPLATE_ID           "TMPLxxxxxx"
 #define BLYNK_DEVICE_NAME           "ESP8266"
-#define BLYNK_AUTH_TOKEN            "fE46CnzHg2c-P0bfxLK4skJlFX6XP-4X"
+#define BLYNK_AUTH_TOKEN            "JB5gv1liwyq91VWaxzwxcSavHcEYt49-"
 
 
 // Comment this out to disable prints and save space
 #define BLYNK_PRINT Serial
 
-#define BUTTON D5
+// #define BUTTON 14
 
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
@@ -51,9 +51,6 @@ void setup()
 void loop()
 {
   Blynk.run();
-
-
-
   // You can inject your own code or combine it with other sketches.
   // Check other examples on how to communicate with Blynk. Remember
   // to avoid delay() function!
