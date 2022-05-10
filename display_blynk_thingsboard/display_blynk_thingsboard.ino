@@ -125,6 +125,17 @@ void pushDataDHT11() {
   }
 }
 
+void sendNotifications() {
+  if (humidity >= 75) {
+    Blynk.email("{DEVICE_NAME} - High Humidity", "Humidity exceeds 75 %");
+    Blynk.notify("{DEVICE_NAME} - High Humidity - Humidity exceeds 75 %");
+  }
+  if (temp_c >= 30) {
+    Blynk.email("{DEVICE_NAME} - High Temperature", "Humidity exceeds 30 °C");
+    Blynk.notify("{DEVICE_NAME} - High Temperature - Humidity exceeds 30 °C");
+  }
+}
+
 void setupPMS7003() {
   pinMode(D2, INPUT);
   pinMode(D3, OUTPUT);
@@ -224,6 +235,8 @@ void loop() {
   readPMS7003();
   displayBlynkPMS7003();
   pushDataPMS7003();
+
+  sendNotifications();
   
   tb.loop();
 }
